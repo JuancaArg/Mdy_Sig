@@ -14,13 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/a', function () {
-    return 'holii';
+Route::get('/', function () {
+    return view('welcome');
 });
 
-Route::get('/hola', function () {
-    return "hola";
-});
 
 Route::post('/Controlador_Funciones_Ajax', 'Controlador_Funciones_Ajax@Deriva_Controladores_Ajax');
 
