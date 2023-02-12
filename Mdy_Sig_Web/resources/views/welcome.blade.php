@@ -7,9 +7,8 @@
         @include('Reutilizables/Cabecera')
             <div class="container-fluid page-body-wrapper">
             @include('Reutilizables/Menu')
-                    <div class="main-panel">                        
-                        @include('Contenido/Resumen_Asistencia')                        
-                        @include('Reutilizables/Footer')
+                    <div class="main-panel">
+                    @yield('contenido')
                     </div>
             </div>
         </div>

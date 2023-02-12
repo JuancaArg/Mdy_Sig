@@ -7,9 +7,8 @@
         <?php echo $__env->make('Reutilizables/Cabecera', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             <div class="container-fluid page-body-wrapper">
             <?php echo $__env->make('Reutilizables/Menu', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                    <div class="main-panel">                        
-                        <?php echo $__env->make('Contenido/Resumen_Asistencia', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>                        
-                        <?php echo $__env->make('Reutilizables/Footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                    <div class="main-panel">
+                    <?php echo $__env->yieldContent('contenido'); ?>
                     </div>
             </div>
         </div>
