@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+{{session('status')}}
     @include('Reutilizables/Head')
     <body>
-    @if (empty($_SESSION["status"]))
-        @include('Sesion/Login')
-    @elseif ($_SESSION["status"] == 'conectado')
-        @include('Contenido/Resumen_Asistencia')
+    @if (session('status') == 'conectado')        
+        <div class="container-scroller">
+        @include('Reutilizables/Cabecera')
+            <div class="container-fluid page-body-wrapper">
+            @include('Reutilizables/Menu')
+                    <div class="main-panel">                        
+                        @include('Contenido/Resumen_Asistencia')                        
+                        @include('Reutilizables/Footer')
+                    </div>
+            </div>
+        </div>
     @else
-    @include('Sesion/Login')
+        @include('Sesion/Login')
     @endif 
     </body>
     @include('Reutilizables/scripts')

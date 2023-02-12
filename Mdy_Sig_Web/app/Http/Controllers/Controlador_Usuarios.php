@@ -28,12 +28,14 @@ class Controlador_Usuarios extends Controller
     
             session_start(); 
     
-            $_SESSION["status"] = "conectado";
-            $_SESSION["Nombres Completos"] = $ejecuta[0]['nombres'];  
-            $_SESSION["contador"] = 0;  
+            session(['status' => 'conectado']);
+            session(['Nombres Completos' => $ejecuta[0]['nombres']]);
+            session(['contador' => '0']);  
             
         };
     
     }    
-    
+
+
+
 }

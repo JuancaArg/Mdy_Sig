@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +17,15 @@ Route::get('/', function () {
     return view('welcome');
 }); 
 
+Route::get('/logout', function(){
+
+    session_start();
+
+    session_destroy();
+
+    return view('welcome');
+
+})->name('/logout');
 
 Route::get('/Controlador_Funciones_Ajax', 'App\Http\Controllers\Controlador_Funciones_Ajax@Deriva_Controladores_Ajax');
 

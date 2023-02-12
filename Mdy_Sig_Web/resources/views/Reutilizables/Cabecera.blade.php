@@ -14,14 +14,14 @@
             <li class="nav-item nav-profile dropdown">
                 <a class="nav-link" href="#" data-toggle="dropdown" id="profileDropdown">
                     <img src="src/images/faces/face5.jpg" alt="profile">
-                    <span class="nav-profile-name"><?php echo $_SESSION["Nombres Completos"] ?></span>
+                    <span class="nav-profile-name">{{session('Nombres Completos')}}</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
                     <a class="dropdown-item">
                         <i class="typcn typcn-cog-outline text-primary"></i>
                         Configuracion
                     </a>
-                    <a class="dropdown-item" href="Vista/Reutilizables/Session_Destroy.php">
+                    <a class="dropdown-item" href="{{route ('/logout') }}">
                         <i class="typcn typcn-eject text-primary"></i>
                         Cerrar Sesion
                     </a>
