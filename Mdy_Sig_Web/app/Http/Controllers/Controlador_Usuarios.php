@@ -9,6 +9,7 @@ class Controlador_Usuarios extends Controller
 {
 
     public static function Controlador_Inicio_Sesion($vdocumento,$vpass){
+        
 
         $ejecuta = Modelo_Usuarios::selectRaw('count(*) as q,nombres')
                                     ->where('Documento',$vdocumento)
@@ -36,6 +37,13 @@ class Controlador_Usuarios extends Controller
     
     }    
 
+    public function deleteSessionData(Request $request) {
+        $request->session()->forget('status');
+        $request->session()->forget('Nombres Completos');
+        $request->session()->forget('contador');
 
+        return redirect('/');
+
+     }
 
 }

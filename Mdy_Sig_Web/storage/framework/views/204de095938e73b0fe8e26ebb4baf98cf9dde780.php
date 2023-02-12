@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php echo e(session('status')); ?>
-
     <?php echo $__env->make('Reutilizables/Head', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <body>
     <?php if(session('status') == 'conectado'): ?>        

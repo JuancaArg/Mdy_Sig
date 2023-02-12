@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-{{session('status')}}
     @include('Reutilizables/Head')
     <body>
     @if (session('status') == 'conectado')        
