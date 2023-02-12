@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+  var ruta = "http://localhost/mdy_sig/mdy_sig_web/public/";
 
 $('#prueba').click(function(){
 
@@ -34,8 +35,8 @@ $('#login_button_inicia_sesion').click(function() {
 
   $.ajax({
 
-    url:'/Controlador_Funciones_Ajax',
-    type:'post',
+    url:ruta+'Controlador_Funciones_Ajax',
+    type:'get',
     async:true,
     data:{Controlador:'Login_inicio_sesion',Documento: v_documento, Pass: v_pass}
     ,beforeSend: function(){

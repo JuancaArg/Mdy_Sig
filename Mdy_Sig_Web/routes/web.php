@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+}); 
 
 
-Route::post('/Controlador_Funciones_Ajax', 'Controlador_Funciones_Ajax@Deriva_Controladores_Ajax');
+Route::get('/Controlador_Funciones_Ajax', 'App\Http\Controllers\Controlador_Funciones_Ajax@Deriva_Controladores_Ajax');
 

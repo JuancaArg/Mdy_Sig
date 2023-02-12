@@ -10,33 +10,30 @@ class Controlador_Funciones_Ajax extends Controller
     
     public function Deriva_Controladores_Ajax(Request $request){
 
-        return print_r("hola");
+        $Controlador = $request->query('Controlador');
 
-        $Controlador = $request->input('Login_inicio_sesion');
+        if (isset($Controlador)) {
 
-        
-        if (isset($_POST['Controlador'])) {
-
-            if ($_POST['Controlador'] == 'prueba') {
+            if ($Controlador == 'prueba') {
           
                 //$ejecuta = Consultas_Basicas::consultabasiva();
         
                 //print_r($ejecuta);
              }
-             elseif ($_POST['Controlador'] == 'Login_inicio_sesion'){
+             elseif ($Controlador == 'Login_inicio_sesion'){
         
-                $vdocumento = $request->input("Documento");
-                $vpass = $request->input("Pass");
-
-                print_r("hola");
+                $vdocumento =  $request->query('Documento');
+                $vpass =  $request->query('Pass');
         
-                //$ejecuta = Controlador_Login::Controlador_Inicio_Sesion($vdocumento,$vpass);
+                $ejecuta = Controlador_Usuarios::Controlador_Inicio_Sesion($vdocumento,$vpass);
                 
              }
-             elseif ($_POST['Controlador'] == 'Busca_Agente'){
+             elseif ($Controlador == 'Busca_Agente'){
         
         
               $vdocumento = $_POST["Documento"];
+
+              print_r("hola");
         
               //$ejecuta = Controlador_Personal::Controlador_Busca_Datos($vdocumento);
         
