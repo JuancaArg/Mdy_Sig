@@ -1,9 +1,10 @@
 $(document).ready(function(){
 
+
 $('#prueba').click(function(){
 
     $.ajax({
-        url: 'Controlador/Controlador_Funciones.php',
+        url: '/Controlador_Funciones.php',
         type: 'POST',
         async: true,
         data: {Controlador:'prueba'},
@@ -29,11 +30,11 @@ $('#prueba').click(function(){
 $('#login_button_inicia_sesion').click(function() {
 
   var v_documento = $('#login_dni').val();
-  var v_pass =  $('#login_pass').val()
+  var v_pass =  $('#login_pass').val();
 
   $.ajax({
 
-    url:'Controlador/Controlador_Funciones.php',
+    url:'/Controlador_Funciones_Ajax',
     type:'post',
     async:true,
     data:{Controlador:'Login_inicio_sesion',Documento: v_documento, Pass: v_pass}

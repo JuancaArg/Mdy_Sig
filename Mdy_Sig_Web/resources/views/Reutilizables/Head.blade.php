@@ -6,6 +6,7 @@
   <!-- base:css -->
   <link rel="stylesheet" href="{{ asset('src/vendors/typicons/typicons.css') }}">
   <link rel="stylesheet" href="{{ asset('src/vendors/css/vendor.bundle.base.css') }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <!-- endinject -->
   <!-- plugin css for this page -->
   <!-- End plugin css for this page -->
