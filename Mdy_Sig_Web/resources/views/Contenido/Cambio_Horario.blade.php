@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Solicitud de Cambio de Horario</h4>
-                    <form class="forms-sample">
+                    <form class="forms-sample" id="form-sol-cambio-horario">
                         <div class="form-group">
                             <label for="exampleInputUsername1">Documento Personal</label>
                             <div class="row">
@@ -40,7 +40,7 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputUsername1">Tipo de Cambio</label>
-                            <select class="form-control">
+                            <select class="form-control" id="select_cambio_horario">
                                 <option hidden selected>Selecciona una opción</option>
                                 <option>Permanente</option>
                                 <option>Temporal</option>
@@ -50,11 +50,11 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="exampleInputEmail1">Fecha de Inicio</label>
-                                    <input type="date" class="form-control" id="exampleInputEmail1">
+                                    <input type="date" class="form-control" id="Fecha_ini_cambio_horario">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="exampleInputPassword1">Fecha de Fin</label>
-                                    <input type="date" class="form-control" id="exampleInputPassword1">
+                                    <input type="date" class="form-control" id="Fecha_fin_cambio_de_horario">
                                 </div>
                             </div>
                         </div>
@@ -187,7 +187,7 @@
                                 </div>
                             </div>
                         </div>
-                        <input type="button" value="Registrar" class="btn btn-success mr-2">
+                        <input type="button" value="Registrar" id="btn-sol-cambio-horario" class="btn btn-success mr-2" >
                         <button href="#" class="btn btn-light">Borrar Formulario</button>
                     </form>
                 </div>

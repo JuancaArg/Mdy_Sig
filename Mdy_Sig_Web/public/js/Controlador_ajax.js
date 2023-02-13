@@ -124,4 +124,16 @@ $('#login_button_inicia_sesion').click(function() {
 
   });
 
+  $('#btn-sol-cambio-horario').click(function() {
+    
+    var table = {
+      Documento : $('#Cambio_Descanso_Documento').val(),
+      Tipo_Cambio : $('#select_cambio_horario').val(),
+      Fecha_Ini : $('#Fecha_ini_cambio_horario').val(),
+      Fecha_Fin : $('#Fecha_fin_cambio_de_horario').val()
+    }
+
+    console.log(table);
+  });
+
 });
