@@ -2,6 +2,5 @@
 
 @section('contenido')
 
-<p>Navegacion</p>
 
 @endsection

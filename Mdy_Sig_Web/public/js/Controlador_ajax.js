@@ -91,8 +91,8 @@ $('#login_button_inicia_sesion').click(function() {
     $(Cambio_Descanso_Condicion_Asesor).val('');    
 
     $.ajax({
-      url:'Controlador/Controlador_Funciones.php',
-      type:'post',
+      url:ruta+'Controlador_Funciones_Ajax',
+      type:'get',
       async:true,
       data:{Controlador:'Busca_Agente',Documento: Documento}
       ,beforeSend: function(res){
@@ -102,8 +102,8 @@ $('#login_button_inicia_sesion').click(function() {
       }, success: function (res) {
         
         resultado = JSON.parse(res);
-        console.log(resultado.length );
 
+        console.log(resultado[0])
 
         if(resultado.length  == 0){
 
@@ -112,7 +112,7 @@ $('#login_button_inicia_sesion').click(function() {
         }else{
 
 
-          $(Cambio_Descanso_Nombre_Asesor).val(resultado[0]["NOMBRES"]+' '+resultado[0]["AP_PATERNO"]+' '+resultado[0]["AP_MATERNO"]);
+          $(Cambio_Descanso_Nombre_Asesor).val(resultado[0]["NOMBRES"]);
           $(Cambio_Descanso_Campaña_Asesor).val(resultado[0]["CAMPANIA"]);
           $(Cambio_Descanso_Condicion_Asesor).val(resultado[0]["CONDICION_LABORAL"]);
   

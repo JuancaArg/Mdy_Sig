@@ -5,11 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Modelo_Usuarios extends Model
+class Modelo_Personal extends Model
 {
     use HasFactory;
 
     protected $connection = 'sqlsrv';
 
-    protected $table = 'Mdy_Sig_Web.usuarios.usuarios_personal';
+    protected $table = 'BD_CONTROL_ASISTENCIA.dbo.t_maestro';
+
 }

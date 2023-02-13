@@ -29,13 +29,10 @@ class Controlador_Funciones_Ajax extends Controller
                 
              }
              elseif ($Controlador == 'Busca_Agente'){
-        
-        
-              $vdocumento = $_POST["Documento"];
+              
+              $vdocumento = $request->query('Documento');
 
-              print_r("hola");
-        
-              //$ejecuta = Controlador_Personal::Controlador_Busca_Datos($vdocumento);
+              $ejecuta = Controlador_Personal::Controlador_Busca_Datos($vdocumento);
         
            }     
         

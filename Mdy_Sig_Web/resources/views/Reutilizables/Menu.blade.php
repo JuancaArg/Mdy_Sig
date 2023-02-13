@@ -201,7 +201,7 @@
             </a>
             <div class="collapse show" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link active" href="Cambio_Descanso">Cambios de Descanso</a>
+                    <li class="nav-item"> <a class="nav-link active" href="Cambio_Horario">Cambios de Horario</a>
                     </li>
                 </ul>
             </div>
