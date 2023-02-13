@@ -42,7 +42,7 @@ class Controlador_Usuarios extends Controller
         $request->session()->forget('Nombres Completos');
         $request->session()->forget('contador');
 
-        return redirect('/');
+        return redirect('/Default');
 
      }
 

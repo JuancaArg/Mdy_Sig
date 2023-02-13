@@ -12,9 +12,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/','Contenido/Resumen_Asistencia')->name('welcome');
+Route::view('/','welcome')->name('welcome');
 Route::view('/Cambio_Horario','Contenido/Cambio_Horario')->name('Cambio_Horario');
 Route::view('/Resumen_Asistencia','Contenido/Resumen_Asistencia')->name('Resumen_Asistencia');
+Route::view('/Default','Default')->name('Default');
 
 Route::get('/Logout','App\Http\Controllers\Controlador_Usuarios@deleteSessionData')->name('/Logout');
 
