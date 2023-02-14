@@ -8,6 +8,7 @@
                 <div class="card-body">
                     <h4 class="card-title">Solicitud de Cambio de Horario</h4>
                     <form class="forms-sample" id="Contenido_CH_Formulario">
+                        @csrf
                         <div class="form-group">
                             <label for="exampleInputUsername1">Documento Personal</label>
                             <div class="row">
@@ -94,12 +95,12 @@
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Lunes</label>
                                     <div class="col-sm-5">
-                                        <select class="form-control" name="Contenido_CH_Lunes_Entrada">
+                                        <select class="form-control" name="Contenido_CH_Lunes_Entrada" id="Contenido_CH_Lunes_Entrada">
                                             <option hidden selected>Hora Ingreso</option>
                                         </select>
                                     </div>
                                     <div class="col-sm-5">
-                                        <select class="form-control" name="Contenido_CH_Lunes_Salida">
+                                        <select class="form-control" name="Contenido_CH_Lunes_Salida" id="Contenido_CH_Lunes_Salida">
                                             <option hidden selected>Hora Ingreso</option>
                                         </select>
                                     </div>
@@ -109,12 +110,12 @@
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Martes</label>
                                     <div class="col-sm-5">
-                                        <select class="form-control" name="Contenido_CH_Martes_Entrada">
+                                        <select class="form-control" name="Contenido_CH_Martes_Entrada" id="Contenido_CH_Martes_Entrada">
                                             <option hidden selected>Hora Ingreso</option>
                                         </select>
                                     </div>
                                     <div class="col-sm-5">
-                                        <select class="form-control" name="Contenido_CH_Martes_Salida">
+                                        <select class="form-control" name="Contenido_CH_Martes_Salida" id="Contenido_CH_Martes_Salida">
                                             <option hidden selected>Hora Ingreso</option>
                                         </select>
                                     </div>
@@ -124,12 +125,12 @@
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Miercoles</label>
                                     <div class="col-sm-5">
-                                        <select class="form-control" name="Contenido_CH_Miercoles_Entrada">
+                                        <select class="form-control" name="Contenido_CH_Miercoles_Entrada" id="Contenido_CH_Miercoles_Entrada">
                                             <option hidden selected>Hora Ingreso</option>
                                         </select>
                                     </div>
                                     <div class="col-sm-5">
-                                        <select class="form-control" name="Contenido_CH_Miercoles_Salida">
+                                        <select class="form-control" name="Contenido_CH_Miercoles_Salida" id="Contenido_CH_Miercoles_Salida">
                                             <option hidden selected>Hora Ingreso</option>
                                         </select>
                                     </div>
@@ -139,12 +140,12 @@
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Jueves</label>
                                     <div class="col-sm-5">
-                                        <select class="form-control" name="Contenido_CH_Jueves_Entrada">
+                                        <select class="form-control" name="Contenido_CH_Jueves_Entrada" id="Contenido_CH_Jueves_Entrada">
                                             <option hidden selected>Hora Ingreso</option>
                                         </select>
                                     </div>
                                     <div class="col-sm-5">
-                                        <select class="form-control" name="Contenido_CH_Jueves_Salida">
+                                        <select class="form-control" name="Contenido_CH_Jueves_Salida" id="Contenido_CH_Jueves_Salida">
                                             <option hidden selected>Hora Ingreso</option>
                                         </select>
                                     </div>
@@ -154,12 +155,12 @@
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Viernes</label>
                                     <div class="col-sm-5">
-                                        <select class="form-control" name="Contenido_CH_Viernes_Entrada">
+                                        <select class="form-control" name="Contenido_CH_Viernes_Entrada" id="Contenido_CH_Viernes_Entrada">
                                             <option hidden selected>Hora Ingreso</option>
                                         </select>
                                     </div>
                                     <div class="col-sm-5">
-                                        <select class="form-control" name="Contenido_CH_Viernes_Salida">
+                                        <select class="form-control" name="Contenido_CH_Viernes_Salida" id="Contenido_CH_Viernes_Salida">
                                             <option hidden selected>Hora Ingreso</option>
                                         </select>
                                     </div>
@@ -169,12 +170,12 @@
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Sabado</label>
                                     <div class="col-sm-5">
-                                        <select class="form-control" name="Contenido_CH_Sabado_Entrada">
+                                        <select class="form-control" name="Contenido_CH_Sabado_Entrada" id="Contenido_CH_Sabado_Entrada">
                                             <option hidden selected>Hora Ingreso</option>
                                         </select>
                                     </div>
                                     <div class="col-sm-5">
-                                        <select class="form-control" name="Contenido_CH_Sabado_Salida">
+                                        <select class="form-control" name="Contenido_CH_Sabado_Salida" id="Contenido_CH_Sabado_Salida">
                                             <option hidden selected>Hora Ingreso</option>
                                         </select>
                                     </div>
@@ -184,12 +185,12 @@
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Domingo</label>
                                     <div class="col-sm-5">
-                                        <select class="form-control" name="Contenido_CH_Domingo_Entrada">
+                                        <select class="form-control" name="Contenido_CH_Domingo_Entrada" id="Contenido_CH_Domingo_Entrada">
                                             <option hidden selected>Hora Ingreso</option>
                                         </select>
                                     </div>
                                     <div class="col-sm-5">
-                                        <select class="form-control" name="Contenido_CH_Domingo_Salida">
+                                        <select class="form-control" name="Contenido_CH_Domingo_Salida" id="Contenido_CH_Domingo_Salida">
                                             <option hidden selected>Hora Ingreso</option>
                                         </select>
                                     </div>
