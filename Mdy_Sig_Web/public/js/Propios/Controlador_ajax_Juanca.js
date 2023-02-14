@@ -2,32 +2,6 @@ $(document).ready(function(){
 
   var ruta = "http://localhost/mdy_sig/mdy_sig_web/public/";
 
-$('#prueba').click(function(){
-
-    $.ajax({
-        url: '/Controlador_Funciones.php',
-        type: 'POST',
-        async: true,
-        data: {Controlador:'prueba'},
-        beforeSend: function (res) {
-  
-          console.log("Cargando Importes...");
-  
-        },
-        success: function (res) {
-
-          var v_resultado = JSON.parse(res);
-  
-          $('#prueba_texto').text(res);
-
-          console.log(v_resultado[0]);
-  
-        }
-  
-      });    
-
-});
-
 $('#login_button_inicia_sesion').click(function() {
 
   var v_documento = $('#login_dni').val();
@@ -79,16 +53,19 @@ $('#login_button_inicia_sesion').click(function() {
 
 })
 
-  $('#Cambio_Descanso_Btn_Busca_Documento').click(function() {
+  $('#Contenido_CH_Btn_Buscar_Documento').click(function() {
     
     //Extrae informacion
 
-    Documento = $('#Cambio_Descanso_Documento').val();
+    Documento = $('#Contenido_CH_Documento').val();
 
 
-    $(Cambio_Descanso_Nombre_Asesor).val('');
-    $(Cambio_Descanso_Campaña_Asesor).val('');
-    $(Cambio_Descanso_Condicion_Asesor).val('');    
+    $(Contenido_CH_Nombre).val('');
+    $(Contenido_CH_Condicion).val('');
+    $(Contenido_CH_Campaña).val('');
+    $(Contenido_CH_Jefe1).val('');
+    $(Contenido_CH_Jefe2).val('');
+    $(Contenido_CH_SubCampaña).val('');    
 
     $.ajax({
       url:ruta+'Controlador_Funciones_Ajax',
@@ -102,19 +79,19 @@ $('#login_button_inicia_sesion').click(function() {
       }, success: function (res) {
         
         resultado = JSON.parse(res);
-
-        console.log(resultado[0])
-
+        
         if(resultado.length  == 0){
 
           swal.fire('Mensaje del sistema','Personal no existe','error')
 
         }else{
 
-
-          $(Cambio_Descanso_Nombre_Asesor).val(resultado[0]["NOMBRES"]);
-          $(Cambio_Descanso_Campaña_Asesor).val(resultado[0]["CAMPANIA"]);
-          $(Cambio_Descanso_Condicion_Asesor).val(resultado[0]["CONDICION_LABORAL"]);
+          $(Contenido_CH_Nombre).val(resultado[0]["NOMBRES"]);
+          $(Contenido_CH_Campaña).val(resultado[0]["CAMPANIA"]);
+          $(Contenido_CH_Condicion).val(resultado[0]["CONDICION_LABORAL"]);
+          $(Contenido_CH_Jefe1).val(resultado[0]["NOM_SUPERIOR_INMEDIATO_01"]);
+          $(Contenido_CH_Jefe2).val(resultado[0]["NOM_SUPERIOR_INMEDIATO_02"]);
+          $(Contenido_CH_SubCampaña).val(resultado[0]["SUB_CAMPANIA"]);
   
 
         }
@@ -124,16 +101,27 @@ $('#login_button_inicia_sesion').click(function() {
 
   });
 
+ 
   $('#btn-sol-cambio-horario').click(function() {
     
-    var table = {
-      Documento : $('#Cambio_Descanso_Documento').val(),
-      Tipo_Cambio : $('#select_cambio_horario').val(),
-      Fecha_Ini : $('#Fecha_ini_cambio_horario').val(),
-      Fecha_Fin : $('#Fecha_fin_cambio_de_horario').val()
+    var tabla = $('#Contenido_CH_Formulario').serialize().split("&");
+
+  console.log(tabla);
+});
+
+
+
+  $('#Contenido_CH_Tipo_Cambio').on('change',function () {
+
+    console.log("hola");
+
+    if ($(this).val() == "Permanente") {
+      $('#Contenido_CH_Fecha_Fin').attr('disabled','disabled');
+      $('#Contenido_CH_Fecha_Fin').val('');
+    }else{
+      $('#Contenido_CH_Fecha_Fin').removeAttr('disabled');
     }
 
-    console.log(table);
-  });
-
+    });
+  
 });

@@ -10,5 +10,7 @@
   <!-- endinject -->
 
 
-  <script src="{{ asset('js/Controlador_ajax.js') }}"></script>
+  <script src="{{ asset('js/Propios/Controlador_ajax_Juanca.js') }}"></script>
+  <script src="{{ asset('js/Propios/Controlador_ajax_Gustavo.js') }}"></script>  
+  <script src="{{ asset('js/Propios/Precargado.js') }}"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
