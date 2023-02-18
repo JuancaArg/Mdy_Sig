@@ -36,6 +36,9 @@ class Controlador_Funciones_Ajax extends Controller
                 $resultados = $request->query('tabla');
 
                 $ejecuta = Controlador_Personal::Controlador_Registra_Cambio_Horario($resultados);
+            }elseif ($Controlador == 'Resumen_Asistencia'){
+
+                $ejecuta = Controlador_Personal::Controlador_Resumen_Asistencia();
             }
         }
     }
