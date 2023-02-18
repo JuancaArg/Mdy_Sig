@@ -11,10 +11,10 @@ class Controlador_Usuarios extends Controller
     public static function Controlador_Inicio_Sesion($vdocumento,$vpass){
         
 
-        $ejecuta = Modelo_Usuarios::selectRaw('count(*) as q,nombres')
+        $ejecuta = Modelo_Usuarios::selectRaw('count(*) as q,nombres,Documento')
                                     ->where('Documento',$vdocumento)
                                     ->where('Documento',$vpass)
-                                    ->groupby('nombres')
+                                    ->groupby('nombres','Documento')
                                     ->take(1)
                                             ->get()->toArray();
 
@@ -28,7 +28,7 @@ class Controlador_Usuarios extends Controller
             print_r("ingreso correctamente, Usuario: " . $ejecuta[0]['nombres']);
     
             session_start(); 
-    
+            session(['Documento' => $ejecuta[0]['Documento']]);
             session(['status' => 'conectado']);
             session(['Nombres Completos' => $ejecuta[0]['nombres']]);
             session(['contador' => '0']);  
@@ -41,6 +41,8 @@ class Controlador_Usuarios extends Controller
         $request->session()->forget('status');
         $request->session()->forget('Nombres Completos');
         $request->session()->forget('contador');
+        $request->session()->forget('Documento');
+        
 
         return redirect('/Default');
 

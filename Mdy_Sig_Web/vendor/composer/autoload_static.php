@@ -340,8 +340,8 @@ class ComposerStaticInit22161aac8e0df673a3b97e14be9def4b
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -512,6 +512,7 @@ class ComposerStaticInit22161aac8e0df673a3b97e14be9def4b
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Controlador_Funciones_Ajax' => __DIR__ . '/../..' . '/app/Http/Controllers/Controlador_Funciones_Ajax.php',
+        'App\\Http\\Controllers\\Controlador_Personal' => __DIR__ . '/../..' . '/app/Http/Controllers/Controlador_Personal.php',
         'App\\Http\\Controllers\\Controlador_Usuarios' => __DIR__ . '/../..' . '/app/Http/Controllers/Controlador_Usuarios.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
@@ -524,6 +525,7 @@ class ComposerStaticInit22161aac8e0df673a3b97e14be9def4b
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\ValidateSignature' => __DIR__ . '/../..' . '/app/Http/Middleware/ValidateSignature.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Models\\Modelo_Personal' => __DIR__ . '/../..' . '/app/Models/Modelo_Personal.php',
         'App\\Models\\Modelo_Usuarios' => __DIR__ . '/../..' . '/app/Models/Modelo_Usuarios.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
