@@ -101,11 +101,55 @@ $('#Contenido_CH_Btn_Buscar_Documento').click(function () {
 
 $('#btn-sol-cambio-horario').click(function () {
 
+  // Extract data form table
+
   var tabla = $('#Contenido_CH_Formulario').serialize();
 
   var databla = parseQueryString(tabla);
 
-  // Fin 
+  // Calcula Horas por cada fecha 
+
+  let Totalhora = 0;
+
+  for (let index = 0; index < dias.length; index++) {
+
+    // Valida si no DS
+
+    if (   databla['Contenido_CH_' + dias[index] + '_Salida'] != "DS" 
+        && databla['Contenido_CH_' + dias[index] + '_Entrada'] != "Hora ingreso" 
+        && databla['Contenido_CH_' + dias[index] + '_Salida'] != "Hora ingreso" ) {
+
+      let HoraSal = databla['Contenido_CH_' + dias[index] + '_Salida'].substring(0, 2)
+      let HoraIng = databla['Contenido_CH_' + dias[index] + '_Entrada'].substring(0, 2)
+      let InterSal = databla['Contenido_CH_' + dias[index] + '_Salida'].substring(3, 5)
+      let InterIng = databla['Contenido_CH_' + dias[index] + '_Entrada'].substring(3, 5)
+
+      let Horas = HoraSal - HoraIng;
+      let Inter = (InterSal - InterIng) / 60;
+
+      // Si el horario es de madrugada
+
+      if (Horas + Inter < 0) {
+        var TiempoProg = (24 - HoraIng) + Number(HoraSal) + Inter;
+      } else {
+        var TiempoProg = Horas + Inter;
+      }
+
+      Totalhora = Totalhora + TiempoProg;
+
+      console.log("bien");
+
+    }else{
+
+      Totalhora = Totalhora + 0;
+
+      console.log("mal");
+
+    }
+  }
+
+  console.log(Totalhora);
+
 
   $.ajax({
     url: ruta + 'Controlador_Funciones_Ajax',

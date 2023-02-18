@@ -32,6 +32,15 @@ $('#Contenido_CH_Tipo_Cambio').on('change', function () {
 
 $('#Contenido_CH_Fecha_Inicio').on('change',function(){
 
-    
+    let valor = new Date($(this).val());
+    let iddia = valor.getDay();
+    let nombredia = dias[iddia];
+
+    if (nombredia != 'Lunes'){
+
+        swal.fire('Mensaje del sistema','Ojo! El dia seleccionado no es un lunes, es probable que se asigne un doble descanso','warning')
+
+    }
+
 
 })
