@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Modelo_Personal;
 use App\Models\Res_Asistencia;
 
-use Carbon\Carbon;
 
 use Illuminate\Http\Request;
 
@@ -31,22 +30,17 @@ class Controlador_Personal extends Controller
     }
     public static function Controlador_Resumen_Asistencia(){
         
-        $fechaActual = date('Y-m-d');
-        //Carbon::now();
-        //$fechaHace1Dia = $fechaActual->subDays(1);
-        //$fechaHace7Dias = $fechaActual->subDays(7);
+        $fecha = date('Y-m-d');
+        $Fechadiff7 = date('Y-m-d',strtotime($fecha."-7 days"));
 
         $Doc = session('Documento');
 
         $ejecuta = Res_Asistencia::where('DOCUMENTO',$Doc)
-            //->whereBetween('FECHA_HORARIO', [$fechaHace1Dia,  $fechaHace7Dias])
-            ->get()->toJson();
+            ->whereBetween('fecha', [$Fechadiff7, $fecha])
+            ->OrderBy('fecha', 'DESC')
+            ->get();
 
-        print_r($fechaActual);
-        //print_r($fechaHace1Dia);
-        //print_r($fechaHace7Dias);
-
-        //$fecha = Carbon::createFromFormat('Y-m-d H:i:s', $datos['fecha'])->format('d/m/Y');
+        echo $ejecuta;
 
     }
     

@@ -190,7 +190,7 @@
         <li class="nav-item">
             <a class="nav-link" href="Resumen_Asistencia">
                 <i class="typcn typcn-device-desktop menu-icon"></i>
-                <span class="menu-title">Dashboard</span>
+                <span class="menu-title">Res. Asistencia</span>
             </a>
         </li>
         <li class="nav-item">

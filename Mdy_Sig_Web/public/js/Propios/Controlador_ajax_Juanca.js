@@ -101,9 +101,10 @@ $('#Contenido_CH_Btn_Buscar_Documento').click(function () {
 
 $('#btn-sol-cambio-horario').click(function () {
 
-  var tabla = $('#Contenido_CH_Formulario').serialize().split('&');
+  var tabla = $('#Contenido_CH_Formulario').serialize();
 
-  console.log(tabla);
+  var databla = parseQueryString(tabla);
+
   // Fin 
 
   $.ajax({

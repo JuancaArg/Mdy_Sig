@@ -65,7 +65,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="exampleInputEmail1">Fecha de Inicio</label>
-                                    <input type="date" class="form-control" name="Contenido_CH_Fecha_Inicio">
+                                    <input type="date" class="form-control" name="Contenido_CH_Fecha_Inicio" id="Contenido_CH_Fecha_Inicio">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="exampleInputPassword1">Fecha de Fin</label>

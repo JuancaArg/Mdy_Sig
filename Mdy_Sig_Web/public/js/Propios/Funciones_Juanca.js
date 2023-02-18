@@ -15,7 +15,7 @@ $(camposdiasview.slice(0, -1)).on('click', function () {
 
 })
 
-// Desactivar el cambpo fecha fin cuando es permanente
+// Desactivar el cambpo fecha fin cuando es permanente 
 
 $('#Contenido_CH_Tipo_Cambio').on('change', function () {
 
@@ -27,3 +27,11 @@ $('#Contenido_CH_Tipo_Cambio').on('change', function () {
     }
 
 });
+
+// Envia alerta si esta seleccionando un dia lunees
+
+$('#Contenido_CH_Fecha_Inicio').on('change',function(){
+
+    
+
+})

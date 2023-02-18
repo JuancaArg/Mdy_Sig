@@ -3,46 +3,53 @@
 @section('contenido')
 
 <div class="content-wrapper">
-    <div class="row">
-        <div class="col-md-12 grid-margin stretch-card">
-        <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Resumen de Asistencia</h4>
-                  <p class="card-description">
-                  </p>
-                  <div class="table-responsive"> 
-                    <div class="form-group row">
-                    <div class="col-sm-5">  
-                      <label class="col-form-label">Inicio:</label>
-                        <input class="form-control" placeholder="dd/mm/yyyy">
-                    </div>
-                    <div class="col-sm-5">
-                        <label class="col-form-label">Fin:</label>
-                        <input class="form-control" placeholder="dd/mm/yyyy">                    
-                    </div>
-                        <input type="button" class="btn btn-success" value="🔎" id="Cambio_Descanso_Btn_Busca_Documento">
-                    </div>
-                    <table class="table table-hover" id="Tabla_Asistencia" align="center">
-                      <thead>
-                        <tr>
-                          <th>Fecha</th>
-                          <th>Horario</th>
-                          <th>Descansos</th>
-                          <th>Sigla</th>
-                          <th>Descripción Sigla</th>
-                          <th>Ingreso</th>
-                          <th>Tardanza</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
+  <div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Resumen de Asistencia</h4>
+          <p class="card-description">
+          </p>
+
+          <div class="row">
+            <div class="col-md-5">
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Inicio :</label>
+                <input class="col-md-10 form-control" type="date">
               </div>
+            </div>
+            <div class="col-md-5">
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Fin:</label>
+                <input class="col-md-10 form-control" type="date">
+              </div>
+            </div>
+            <div class="col-md-2">
+              <input type="button" class="form-control btn btn-success " value="🔎" id="">
+            </div>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-hover" id="Tabla_Asistencia" align="center">
+              <thead>
+                <tr>
+                  <th>Fecha</th>
+                  <th>Horario</th>
+                  <th>Descansos</th>
+                  <th>Sigla</th>
+                  <th>Descripción Sigla</th>
+                  <th>Ingreso</th>
+                  <th>Tardanza</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 
 @endsection

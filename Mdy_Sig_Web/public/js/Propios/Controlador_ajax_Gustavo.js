@@ -1,5 +1,4 @@
 window.onload = Resumen_Asistencia();
-var ruta = "http://localhost/mdy_sig/mdy_sig_web/public/";
 
 function Resumen_Asistencia ()
 {
@@ -9,10 +8,10 @@ function Resumen_Asistencia ()
     async: true,
     data: {Controlador:'Resumen_Asistencia'},
     beforeSend: function(res){
-        console.log("Cargando...")
+
     },
     success: function(res){
-        console.log(res)
+        
         var Resultado = JSON.parse(res);
         for (let index = 0; index < Resultado.length; index++) {
         

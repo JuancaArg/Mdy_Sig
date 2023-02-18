@@ -21,4 +21,21 @@ for (let index = 0; index < intervalos.length; index++) {
     }
 }
 
+// convierte datos de una tabla en objeto
+
+function parseQueryString(queryString) {
+    var params = {}, queries, temp, i, l;
+  
+    // Divide la cadena de consulta en una matriz de claves y valores
+    queries = queryString.split("&");
+  
+    // Convierte la matriz de claves y valores en un objeto
+    for (i = 0, l = queries.length; i < l; i++) {
+      temp = queries[i].split('=');
+      params[temp[0]] = decodeURIComponent(temp[1]);
+    }
+  
+    return params;
+  }
+
 
