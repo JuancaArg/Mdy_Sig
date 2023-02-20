@@ -13,7 +13,7 @@
                             <label for="exampleInputUsername1">Documento Personal</label>
                             <div class="row">
                                 <div class="col-md-11">
-                                    <input type="text" class="form-control"  id="Contenido_CH_Documento" name="Contenido_CH_Documento">
+                                    <input type="text" class="form-control"  id="Contenido_CH_Documento" name="Contenido_CH_Documento" required>
                                 </div>
                                 <div class="col-md-1">
                                     <input type="button" class="btn btn-success" value="🔎"
@@ -85,7 +85,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label for="exampleInputConfirmPassword1">Observaciones</label>
-                                    <input type="text" class="form-control" id="Contenido_CH_Observacion" name="Contenido_CH_Observacion">
+                                    <input type="text" class="form-control" id="Contenido_CH_Observacion" name="Contenido_CH_Observacion" required>
                                 </div>
                             </div>
                         </div>
@@ -101,7 +101,7 @@
                                     </div>
                                     <div class="col-sm-5">
                                         <select class="form-control" name="Contenido_CH_Lunes_Salida" id="Contenido_CH_Lunes_Salida">
-                                            <option hidden selected>Hora Ingreso</option>
+                                            <option hidden selected>Hora Salida</option>
                                         </select>
                                     </div>
                                 </div>
@@ -116,7 +116,7 @@
                                     </div>
                                     <div class="col-sm-5">
                                         <select class="form-control" name="Contenido_CH_Martes_Salida" id="Contenido_CH_Martes_Salida">
-                                            <option hidden selected>Hora Ingreso</option>
+                                            <option hidden selected>Hora Salida</option>
                                         </select>
                                     </div>
                                 </div>
@@ -131,7 +131,7 @@
                                     </div>
                                     <div class="col-sm-5">
                                         <select class="form-control" name="Contenido_CH_Miercoles_Salida" id="Contenido_CH_Miercoles_Salida">
-                                            <option hidden selected>Hora Ingreso</option>
+                                            <option hidden selected>Hora Salida</option>
                                         </select>
                                     </div>
                                 </div>
@@ -146,7 +146,7 @@
                                     </div>
                                     <div class="col-sm-5">
                                         <select class="form-control" name="Contenido_CH_Jueves_Salida" id="Contenido_CH_Jueves_Salida">
-                                            <option hidden selected>Hora Ingreso</option>
+                                            <option hidden selected>Hora Salida</option>
                                         </select>
                                     </div>
                                 </div>
@@ -161,7 +161,7 @@
                                     </div>
                                     <div class="col-sm-5">
                                         <select class="form-control" name="Contenido_CH_Viernes_Salida" id="Contenido_CH_Viernes_Salida">
-                                            <option hidden selected>Hora Ingreso</option>
+                                            <option hidden selected>Hora Salida</option>
                                         </select>
                                     </div>
                                 </div>
@@ -176,7 +176,7 @@
                                     </div>
                                     <div class="col-sm-5">
                                         <select class="form-control" name="Contenido_CH_Sabado_Salida" id="Contenido_CH_Sabado_Salida">
-                                            <option hidden selected>Hora Ingreso</option>
+                                            <option hidden selected>Hora Salida</option>
                                         </select>
                                     </div>
                                 </div>
@@ -191,7 +191,7 @@
                                     </div>
                                     <div class="col-sm-5">
                                         <select class="form-control" name="Contenido_CH_Domingo_Salida" id="Contenido_CH_Domingo_Salida">
-                                            <option hidden selected>Hora Ingreso</option>
+                                            <option hidden selected>Hora Salida</option>
                                         </select>
                                     </div>
                                 </div>

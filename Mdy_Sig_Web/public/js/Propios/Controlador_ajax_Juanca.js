@@ -99,7 +99,7 @@ $('#Contenido_CH_Btn_Buscar_Documento').click(function () {
 
 });
 
-$('#btn-sol-cambio-horario').click(function () {
+$('#btn-sol-cambio-horario').click(function (e) {
 
   // Extract data form table
 
@@ -110,14 +110,25 @@ $('#btn-sol-cambio-horario').click(function () {
   // Calcula Horas por cada fecha 
 
   let Totalhora = 0;
+  let TotalNollenado = 0;
+
+  if (databla['Contenido_CH_Nombre'] == ''
+      && databla['Contenido_CH_Tipo_Cambio'] == 'Selecciona una opción'
+      && databla['Contenido_CH_Fecha_Inicio'] == '')  {
+
+        TotalNollenado = TotalNollenado + 1
+
+  }
 
   for (let index = 0; index < dias.length; index++) {
 
     // Valida si no DS
 
-    if (   databla['Contenido_CH_' + dias[index] + '_Salida'] != "DS" 
-        && databla['Contenido_CH_' + dias[index] + '_Entrada'] != "Hora ingreso" 
-        && databla['Contenido_CH_' + dias[index] + '_Salida'] != "Hora ingreso" ) {
+
+    if (databla['Contenido_CH_' + dias[index] + '_Entrada'] != "DS"
+      && databla['Contenido_CH_' + dias[index] + '_Entrada'] != "Hora Ingreso"
+      && databla['Contenido_CH_' + dias[index] + '_Salida'] != "Hora Salida"
+    ) {
 
       let HoraSal = databla['Contenido_CH_' + dias[index] + '_Salida'].substring(0, 2)
       let HoraIng = databla['Contenido_CH_' + dias[index] + '_Entrada'].substring(0, 2)
@@ -137,33 +148,56 @@ $('#btn-sol-cambio-horario').click(function () {
 
       Totalhora = Totalhora + TiempoProg;
 
-      console.log("bien");
-
-    }else{
+    } else {
 
       Totalhora = Totalhora + 0;
 
-      console.log("mal");
+      if (databla['Contenido_CH_' + dias[index] + '_Entrada'] == "Hora Ingreso"
+      && databla['Contenido_CH_' + dias[index] + '_Salida'] == "Hora Salida") {
+        
+        TotalNollenado = TotalNollenado + 1
+
+      }
 
     }
   }
 
-  console.log(Totalhora);
+  console.log(databla);
 
+  if (TotalNollenado == 0){
 
-  $.ajax({
-    url: ruta + 'Controlador_Funciones_Ajax',
-    type: 'get',
-    async: true,
-    data: { Controlador: 'Contenido_CH_Registrar', tabla: tabla },
-    beforeSend: function (res) {
+    Swal.fire({
+      title: 'Mensaje del sistema',
+      text: "Usted esta registrando " + Totalhora + " Horas, Esta seguro de continuar?",
+      icon: 'warning',
+      showCancelButton: true,
+      cancelButtonText: "Cancelar",
+      confirmButtonText: 'Si, Confirmar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        $.ajax({
+          url: ruta + 'Controlador_Funciones_Ajax',
+          type: 'get',
+          async: true,
+          data: { Controlador: 'Contenido_CH_Registrar', tabla: tabla },
+          beforeSend: function (res) {
+  
+            console.log("Cargando");
+          },
+          success: function (res) {
+  
+          }
+        })
+      }
+    })
 
-      console.log("Cargando");
-    },
-    success: function (res) {
+  }
+  else{
 
-    }
-  })
+    swal.fire('Mensaje del sistema','Porfavor complete todos los campos','warning')
 
+  }
+
+  
 });
 
