@@ -205,6 +205,12 @@
                     </li>
                 </ul>
             </div>
+            <div class="collapse show" id="ui-basic">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link active" href="Validacion_Asistencia">Val. de Asistencia</a>
+                    </li>
+                </ul>
+            </div>
         </li>
     </ul>
 </nav>
