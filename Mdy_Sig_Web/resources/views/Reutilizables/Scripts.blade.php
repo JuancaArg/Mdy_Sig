@@ -16,5 +16,6 @@
   <script src="{{ asset('js/Propios/Funciones_Juanca.js') }}"></script>
   <script src="{{ asset('js/Propios/Controlador_ajax_Juanca.js') }}"></script>
   <script src="{{ asset('js/Propios/Controlador_ajax_Gustavo.js') }}"></script>
+  <script src="{{ asset('js/Propios/Controlador_ajax_Duver.js') }}"></script>
 
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

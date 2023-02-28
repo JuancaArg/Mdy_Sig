@@ -39,6 +39,11 @@ class Controlador_Funciones_Ajax extends Controller
             }elseif ($Controlador == 'Resumen_Asistencia'){
 
                 $ejecuta = Controlador_Personal::Controlador_Resumen_Asistencia();
+            } elseif ($Controlador == 'Busca_Agente_Asistencia') {
+
+                $vdocumento = $request->query('Documento');
+
+                $ejecuta = Controlador_Personal::Controlador_Busca_Datos_Asistencia($vdocumento);
             }
         }
     }
