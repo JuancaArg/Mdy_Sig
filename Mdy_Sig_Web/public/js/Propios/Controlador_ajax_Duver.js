@@ -6,7 +6,7 @@ $('#Contenido_VA_Btn_Buscar_Documento').click(function () {
     //Extrae informacion
 
     Documento = $('#Contenido_VA_Documento').val();
-    //Fecha = $('#Contenido_VA_Fecha').val();
+    Fecha = $('#Contenido_VA_Fecha').val();
 
 
     $(Contenido_VA_Nombre).val('');
@@ -20,7 +20,7 @@ $('#Contenido_VA_Btn_Buscar_Documento').click(function () {
         url: ruta + 'Controlador_Funciones_Ajax',
         type: 'get',
         async: true,
-        data: { Controlador: 'Busca_Agente_Asistencia', Documento: Documento }
+        data: { Controlador: 'Busca_Agente_Asistencia', Documento: Documento , Fecha: Fecha}
         , beforeSend: function (res) {
 
             console.log("Cargando");

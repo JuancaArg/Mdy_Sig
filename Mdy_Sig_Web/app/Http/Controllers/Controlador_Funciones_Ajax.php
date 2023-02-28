@@ -42,8 +42,9 @@ class Controlador_Funciones_Ajax extends Controller
             } elseif ($Controlador == 'Busca_Agente_Asistencia') {
 
                 $vdocumento = $request->query('Documento');
+                $vfecha = $request->query('Fecha');
 
-                $ejecuta = Controlador_Personal::Controlador_Busca_Datos_Asistencia($vdocumento);
+                $ejecuta = Controlador_Personal::Controlador_Busca_Datos_Asistencia($vdocumento , $vfecha);
             }
         }
     }
