@@ -21,7 +21,7 @@
                         <div class="col-md-5">
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Fecha:</label>
-                                <input class="col-md-10 form-control" type="date" name="Contenido_VA_Fecha" required>
+                                <input class="col-md-10 form-control" type="date" name="Contenido_VA_Fecha" max="2023-02-27" min="2023-02-20" required>
                             </div>
                         </div>
                         <div class="col-md-2">
