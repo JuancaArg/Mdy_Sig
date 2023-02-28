@@ -8,7 +8,6 @@ $('#Contenido_VA_Btn_Buscar_Documento').click(function () {
     Documento = $('#Contenido_VA_Documento').val();
     Fecha = $('#Contenido_VA_Fecha').val();
 
-
     $(Contenido_VA_Nombre).val('');
     $(Contenido_VA_Paterno).val('');
     $(Contenido_VA_Materno).val('');
