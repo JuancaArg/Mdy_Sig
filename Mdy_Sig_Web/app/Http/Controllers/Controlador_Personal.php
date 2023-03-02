@@ -43,10 +43,12 @@ class Controlador_Personal extends Controller
 
     public static function Controlador_Busca_Datos_Asistencia($vdocumento , $vfecha)
     {
-        $fecha = date('Y-m-d');
+        //$fecha = date('Y-m-d');
+        //$vfecha->format('Y-m-d');
+        //print_r($vfecha);
 
         $ejecuta = Modelo_Personal::where('documento', $vdocumento)
-            ->where('fecha', $fecha)
+            ->where('fecha', $vfecha)
             ->get()->toJson();
 
         print_r($ejecuta);

@@ -22,6 +22,12 @@ $('#Contenido_VA_Btn_Buscar_Documento').click(function () {
         data: { Controlador: 'Busca_Agente_Asistencia', Documento: Documento , Fecha: Fecha}
         , beforeSend: function (res) {
 
+            f = new Date();
+            xy = new Date(Fecha)
+
+            dif = (f- xy);
+            Dias = Math.floor(dif / (1000 * 60 * 60 * 24));
+
             console.log("Cargando");
 
         }, success: function (res) {
@@ -33,17 +39,35 @@ $('#Contenido_VA_Btn_Buscar_Documento').click(function () {
                 swal.fire('Mensaje del sistema', 'Ingresar datos correctos', 'error')
 
             } else {
+                if (Dias < 1 || Dias > 20) {
 
-                $(Contenido_VA_Nombre).val(resultado[0]["NOMBRES"]);
-                $(Contenido_VA_Paterno).val(resultado[0]["AP_PATERNO"]);
-                $(Contenido_VA_Materno).val(resultado[0]["AP_MATERNO"]);
-                $(Contenido_VA_SubCampaña).val(resultado[0]["SUB_CAMPANIA"]);
-                $(Contenido_VA_Sigla).val(resultado[0]["SIGLA_ASISTENCIA"]);
-                $(Contenido_VA_Descripcion).val(resultado[0]["DESCRIPCION_SIGLA"]);
+                    swal.fire('Mensaje del sistema', 'FECHA fuera del rango permitido', 'error')
 
+                }else{
+
+                    $(Contenido_VA_Nombre).val(resultado[0]["NOMBRES"]);
+                    $(Contenido_VA_Paterno).val(resultado[0]["AP_PATERNO"]);
+                    $(Contenido_VA_Materno).val(resultado[0]["AP_MATERNO"]);
+                    $(Contenido_VA_SubCampaña).val(resultado[0]["SUB_CAMPANIA"]);
+                    $(Contenido_VA_Sigla).val(resultado[0]["SIGLA_ASISTENCIA"]);
+                    $(Contenido_VA_Descripcion).val(resultado[0]["DESCRIPCION_SIGLA"]);
+
+                }
             }
-
         }
     });
 
+    
 });
+
+
+var siglas = [
+    'A', 'FI'
+]
+
+for (let index = 0; index < siglas.length; index++) {
+
+    opciones = '<option>' + siglas[index] + '</option>';
+    $('#Contenido_VA_Lista_Sigla').append(opciones);
+
+};

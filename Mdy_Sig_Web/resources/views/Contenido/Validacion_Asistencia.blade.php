@@ -19,9 +19,14 @@
                             </div>
                         </div>
                         <div class="col-md-5">
+                            <?php
+                            $FechaMin =  date('Y-m-d',strtotime(date('Y-m-d')."-3 days"));
+                            $FechaMax =  date('Y-m-d',strtotime(date('Y-m-d')."-1 days"))
+                            ?>
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Fecha:</label>
-                                <input class="col-md-10 form-control" type="date" name="Contenido_VA_Fecha" max="2023-02-27" min="2023-02-20" required>
+                                <input class="col-md-10 form-control" type="date" id="Contenido_VA_Fecha"
+                                    name="Contenido_VA_Fecha" min="<?= $FechaMin;?>" max="<?= $FechaMax;?>" required>
                             </div>
                         </div>
                         <div class="col-md-2">
@@ -65,18 +70,32 @@
                 </div>
                 <div class="card-body">
                     <h4 class="card-title">Datos a Modificar</h4>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <label for="exampleInputConfirmPassword1">Nueva Sigla</label>
-                                <input type="text" class="form-control" id="">
-                            </div>
-                            <div class="col-md-9">
-                                <label for="exampleInputConfirmPassword1">Motivo</label>
-                                <input type="text" class="form-control" id="">
-                            </div>
+                    <form class="forms-sample" id="Contenido_CH_Formulario">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Nueva Sigla</label>
+                                        <div class="col-sm-5">
+                                            <select class="form-control" name="Contenido_VA_Lista_Sigla" id="Contenido_VA_Lista_Sigla">
+                                                <option hidden selected>Seleccionar Sigla</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="exampleInputConfirmPassword1">Nueva Sigla</label>
+                                    <input type="text" class="form-control" id="">
+                                </div>
+                                <div class="col-md-9">
+                                    <label for="exampleInputConfirmPassword1">Motivo</label>
+                                    <input type="text" class="form-control" id="Contenido_VA_Fecha">
+                                </div>
+                            </div>   
                         </div>
-                    </div>
+                        <input type="button" value="Registrar" id="btn-sol-cambio-horario" class="btn btn-success mr-2">
+                        <button href="#" class="btn btn-light">Borrar Formulario</button>
+                    </form>
                 </div>
             </div>
         </div>
