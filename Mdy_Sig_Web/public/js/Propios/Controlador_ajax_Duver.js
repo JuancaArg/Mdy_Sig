@@ -61,13 +61,15 @@ $('#Contenido_VA_Btn_Buscar_Documento').click(function () {
 });
 
 
-var siglas = [
-    'A', 'FI'
-]
+var siglas = ['A', 'FI']
+var motivo_VA_A = ['FALLO EN EL PROCESO DE ALTA DE PERSONAL','FALLO DE OMISION DE PERSONAL','FALLO DE REGISTRO EN SISTEMA','RETRASO DEL PROCESO DE CRECIMIENTO','FALTA DE ACTUALIZACIÓN DEL CARGO FUNCIONAL','FALLO EN PC, MARCACIÓN TARDÍA (ACTUALIZACIÓN DE TARDANZA)']
 
 for (let index = 0; index < siglas.length; index++) {
-
     opciones = '<option>' + siglas[index] + '</option>';
     $('#Contenido_VA_Lista_Sigla').append(opciones);
+};
 
+for (let index = 0; index < motivo_VA_A.length; index++) {
+    opciones_VA_A = '<option>' + motivo_VA_A[index] + '</option>';
+    $('#Contenido_VA_Lista_Motivo').append(opciones_VA_A);
 };

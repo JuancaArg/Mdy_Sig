@@ -70,28 +70,30 @@
                 </div>
                 <div class="card-body">
                     <h4 class="card-title">Datos a Modificar</h4>
-                    <form class="forms-sample" id="Contenido_CH_Formulario">
+                    <form class="forms-sample" id="Contenido_VA_Formulario">
                         <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label">Nueva Sigla</label>
-                                        <div class="col-sm-5">
-                                            <select class="form-control" name="Contenido_VA_Lista_Sigla" id="Contenido_VA_Lista_Sigla">
-                                                <option hidden selected>Seleccionar Sigla</option>
-                                            </select>
+                            <div class="col-md-12">
+                                <div class="form-group row">
+                                    <label class="col-sm-1 col-form-label">Nueva Sigla</label>
+                                    <div class="col-sm-3">
+                                        <select class="form-control" name="Contenido_VA_Lista_Sigla" id="Contenido_VA_Lista_Sigla">
+                                            <option hidden selected>Seleccionar Sigla</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-8">
+                                        <div class="form-group row">
+                                            <label class="col-sm-1 col-form-label">Motivo</label>
+                                            <div class="col-sm-11">
+                                                <select class="form-control" name="Contenido_VA_Lista_Motivo" id="Contenido_VA_Lista_Motivo">
+                                                    <option hidden selected>Seleccionar Motivo</option>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
-                                    <label for="exampleInputConfirmPassword1">Nueva Sigla</label>
-                                    <input type="text" class="form-control" id="">
-                                </div>
-                                <div class="col-md-9">
-                                    <label for="exampleInputConfirmPassword1">Motivo</label>
-                                    <input type="text" class="form-control" id="Contenido_VA_Fecha">
-                                </div>
-                            </div>   
+                            </div>
+
                         </div>
                         <input type="button" value="Registrar" id="btn-sol-cambio-horario" class="btn btn-success mr-2">
                         <button href="#" class="btn btn-light">Borrar Formulario</button>
