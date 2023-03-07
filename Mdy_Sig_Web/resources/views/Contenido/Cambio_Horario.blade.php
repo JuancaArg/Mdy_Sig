@@ -74,7 +74,18 @@
                         </div>
                         <div class="form-group">
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-6">
+                                    <label for="exampleInputUsername1">Motivo</label>
+                                    <select class="form-control" name="Contenido_CH_Motivo" id="Contenido_CH_Motivo">
+                                        <option hidden selected>Selecciona una opción</option>
+                                        <option>Reducción de horario por Apoyo</option>
+                                        <option>Cambio por Requerimiento</option>
+                                        <option>Salud</option>
+                                        <option>Estudios</option>
+                                        <option>Personales</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
                                     <label for="exampleInputConfirmPassword1">Comentarios</label>
                                     <input type="text" class="form-control" id="Contenido_CH_Comentarios" name="Contenido_CH_Comentarios" required>
                                 </div>
@@ -310,7 +321,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Domingo -->     
+                        <!-- Domingo -->
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group row">
@@ -342,10 +353,10 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>                                                                                                                                                                   
+                        </div>
                         <input type="button" value="Registrar" id="btn-sol-cambio-horario" class="btn btn-success mr-2">
                         <button href="#" class="btn btn-light">Borrar Formulario</button>
-                    </div>
+                </div>
                 </form>
             </div>
         </div>
