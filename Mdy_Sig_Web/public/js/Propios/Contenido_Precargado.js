@@ -26,6 +26,9 @@ for (let index = 0; index < intervalos.length; index++) {
         $('#Contenido_CH_' + dias[index] + '_Salida').append(opciones);
         $('#Contenido_CH_' + dias[index] + '_Entrada').append(opciones);
 
+        $('#Contenido_CH_Hora_Break_'+ dias[index] +'_Entrada').append(opciones);
+        $('#Contenido_CH_Hora_Break_'+ dias[index] +'_Salida').append(opciones);
+
     }
 
     $('#Contenido_CH_Hora_Defecto_Entrada').append(opciones);

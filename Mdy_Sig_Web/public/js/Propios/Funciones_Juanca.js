@@ -65,3 +65,24 @@ $('#Contenido_CH_Hora_Defecto_Salida').on('change', function(){
 
 })
 
+$('#Contenido_CH_Hora_Break_Entrada').on('change', function(){
+
+    for (let index = 0; index < dias.length; index++) {
+
+        console.log('Contenido_CH_Hora_Break_'+ dias[index] +'_Entrada');
+
+        $('#Contenido_CH_Hora_Break_'+ dias[index] +'_Entrada').val($(this).val())
+        
+    }
+
+})
+
+$('#Contenido_CH_Hora_Break_Salida').on('change', function(){
+
+    for (let index = 0; index < dias.length; index++) {
+
+        $('#Contenido_CH_Hora_Break_'+ dias[index] +'_Salida').val($(this).val())
+        
+    }
+
+})
