@@ -93,6 +93,38 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">H. defecto</label>
+                                    <div class="col-sm-5">
+                                        <select class="form-control" name="Contenido_CH_Hora_Defecto_Entrada" id="Contenido_CH_Hora_Defecto_Entrada">
+                                            <option hidden selected>Hora Ingreso</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <select class="form-control" name="Contenido_CH_Hora_Defecto_Salida" id="Contenido_CH_Hora_Defecto_Salida">
+                                            <option hidden selected>Hora Salida</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">Break</label>
+                                    <div class="col-sm-5">
+                                        <select class="form-control" name="Contenido_CH_Hora_Break_Entrada" id="Contenido_CH_Hora_Break_Entrada">
+                                            <option hidden selected>Hora Ingreso</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <select class="form-control" name="Contenido_CH_Hora_Break_Salida" id="Contenido_CH_Hora_Break_Salida">
+                                            <option hidden selected>Hora Salida</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Lunes</label>
                                     <div class="col-sm-5">
                                         <select class="form-control" name="Contenido_CH_Lunes_Entrada" id="Contenido_CH_Lunes_Entrada">

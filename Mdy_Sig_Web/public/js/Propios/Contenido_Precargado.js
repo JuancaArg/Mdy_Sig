@@ -9,6 +9,14 @@ for (let index = 0; index < dias.length; index++) {
 
 // Carga los intervalos a los select
 
+$('#Contenido_CH_Hora_Defecto_Entrada').append('<option>DS</option>');
+$('#Contenido_CH_Hora_Defecto_Salida').append('<option>DS</option>');
+
+
+$('#Contenido_CH_Hora_Break_Entrada').append('<option>Sin Break</option>');
+$('#Contenido_CH_Hora_Break_Salida').append('<option>Sin Break</option>');
+
+
 for (let index = 0; index < intervalos.length; index++) {
 
     opciones = '<option>' + intervalos[index] + '</option>';
@@ -19,6 +27,15 @@ for (let index = 0; index < intervalos.length; index++) {
         $('#Contenido_CH_' + dias[index] + '_Entrada').append(opciones);
 
     }
+
+    $('#Contenido_CH_Hora_Defecto_Entrada').append(opciones);
+    $('#Contenido_CH_Hora_Defecto_Salida').append(opciones);
+
+
+    $('#Contenido_CH_Hora_Break_Entrada').append(opciones);
+    $('#Contenido_CH_Hora_Break_Salida').append(opciones);
+
+
 }
 
 // convierte datos de una tabla en objeto
