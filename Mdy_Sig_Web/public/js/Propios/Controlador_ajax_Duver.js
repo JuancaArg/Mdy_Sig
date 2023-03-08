@@ -41,9 +41,9 @@ $('#Contenido_VA_Btn_Buscar_Documento').click(function () {
                 swal.fire('Mensaje del sistema', 'Ingresar datos correctos', 'error')
 
             } else {
-                if (Dias < 1 || Dias > 20) {
+                if (Dias < 1 || Dias > 3) {
 
-                    swal.fire('Mensaje del sistema', 'FECHA fuera del rango permitido', 'error')
+                    swal.fire('Mensaje del sistema', 'FECHA fuera del rango permitido (3 dias máxima de antiguedad)', 'error')
 
                 } else {
 
@@ -64,15 +64,15 @@ $('#Contenido_VA_Btn_Buscar_Documento').click(function () {
 
 
 var siglas = ['A', 'FI']
-var motivo_A = ['FALLO EN EL PROCESO DE ALTA DE PERSONAL', 'FALLO DE OMISION DE PERSONAL', 'FALLO DE REGISTRO EN SISTEMA', 'RETRASO DEL PROCESO DE CRECIMIENTO', 'FALTA DE ACTUALIZACIÓN DEL CARGO FUNCIONAL', 'FALLO EN PC, MARCACIÓN TARDÍA (ACTUALIZACIÓN DE TARDANZA)']
-var motivo_FI = ['ERROR DE MARCACIÓN']
+var motivo_A = ['Seleccionar Motivo','FALLO EN EL PROCESO DE ALTA DE PERSONAL', 'FALLO DE OMISION DE PERSONAL', 'FALLO DE REGISTRO EN SISTEMA', 'RETRASO DEL PROCESO DE CRECIMIENTO', 'FALTA DE ACTUALIZACIÓN DEL CARGO FUNCIONAL', 'FALLO EN PC, MARCACIÓN TARDÍA (ACTUALIZACIÓN DE TARDANZA)']
+var motivo_FI = ['Seleccionar Motivo','ERROR DE MARCACIÓN']
 
 for (let index = 0; index < siglas.length; index++) {
     opciones = '<option>' + siglas[index] + '</option>';
     $('#Contenido_VA_Lista_Sigla').append(opciones);
 };
 
-// Desactivar el cambpo del costado si se selecciona DS
+// Cargar motivo de acuerdo a la sigla solicitada
 
 $('#Contenido_VA_Lista_Sigla').on('change', function () {
 
@@ -121,42 +121,43 @@ $('#btn-sol-val-asistencia').click(function () {
     if (DatoCompleto == 1) {
 
         if ($('#Contenido_VA_Sigla').val() != databla['Contenido_VA_Lista_Sigla']) {
+            if($('#Contenido_VA_Sigla').val() != ''){
 
-            Swal.fire(
-                {
-                    title: 'Mensaje del sistema',
-                    text: "Usted esta registrando cambio de Sigla?",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    cancelButtonText: "Cancelar",
-                    confirmButtonText: 'Si, Confirmar'
-                }).then((result) => {
+                Swal.fire(
+                    {
+                        title: 'Mensaje del sistema',
+                        text: "Usted esta registrando cambio de Sigla?",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        cancelButtonText: "Cancelar",
+                        confirmButtonText: 'Si, Confirmar'
+                    }).then((result) => {
 
-                    if (result.isConfirmed) {
-                        $.ajax({
-                            url: ruta + 'Controlador_Funciones_Ajax',
-                            type: 'get',
-                            async: true,
-                            //data: { Controlador: 'Contenido_CH_Registrar', tabla: tabla },
-                            beforeSend: function (res) {
+                        if (result.isConfirmed) {
+                            $.ajax({
+                                url: ruta + 'Controlador_Funciones_Ajax',
+                                type: 'get',
+                                async: true,
+                                data: { Controlador: 'Contenido_VA_Registrar', tabla: tabla },
+                                beforeSend: function (res) {
 
-                                console.log("Cargando");
-                            },
-                            success: function (res) {
+                                    console.log("Cargando");
+                                },
+                                success: function (res) {
 
-                            }
-                        })
-                    }
-                })
+                                }
+                            })
+                        }
+                    })
+            }else{
+                swal.fire('Mensaje del sistema', 'Realizar la busqueda correspondiente', 'warning')
+            }
         }else{
             swal.fire('Mensaje del sistema', 'Validar la sigla Solicitada', 'warning')    
         }
-
     }
     else {
-
         swal.fire('Mensaje del sistema', 'Porfavor complete todos los campos', 'warning')
-
     }
 
 });

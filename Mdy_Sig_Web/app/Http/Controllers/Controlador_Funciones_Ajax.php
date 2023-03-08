@@ -45,6 +45,11 @@ class Controlador_Funciones_Ajax extends Controller
                 $vfecha = $request->query('Fecha');
 
                 $ejecuta = Controlador_Personal::Controlador_Busca_Datos_Asistencia($vdocumento , $vfecha);
+            }elseif ($Controlador == 'Contenido_VA_Registrar'){
+
+                $resultados = $request->query('tabla');
+
+                $ejecuta = Controlador_Personal::Controlador_Registra_Validacion_Asistencia($resultados);
             }
         }
     }

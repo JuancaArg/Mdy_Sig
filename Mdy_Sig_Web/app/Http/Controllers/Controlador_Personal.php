@@ -53,5 +53,10 @@ class Controlador_Personal extends Controller
 
         print_r($ejecuta);
     }
+
+    public static function Controlador_Registra_Validacion_Asistencia($tabla)
+    {
+        print_r($tabla);
+    }
     
 }
