@@ -43,5 +43,16 @@ class Controlador_Personal extends Controller
         echo $ejecuta;
 
     }
+    public static function Controlador_BusquedaDniNombres($valor){
+
+        $resultados = Modelo_Personal::selectRaw("Concat(documento,' - ',AP_PATERNO,' ',AP_MATERNO,' ',NOMBRES) as buscador , documento")
+        ->whereRaw("Concat(documento,' - ',AP_PATERNO,' ',AP_MATERNO,' ',NOMBRES) like ?",['%' . $valor.'%'])
+        ->take(10)
+        ->distinct()
+        ->get();
+
+        echo $resultados;
+
+    }
     
 }

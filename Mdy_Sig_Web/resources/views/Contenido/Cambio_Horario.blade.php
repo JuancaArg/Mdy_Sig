@@ -1,6 +1,58 @@
 @extends('welcome')
 
 @section('contenido')
+
+<style>
+
+#Contenido_CH_Documento_Autocompletado {
+    list-style-type: none;
+    padding: 0;
+    margin-top: -1px;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+}
+
+#Contenido_CH_Documento_Autocompletado li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+#Contenido_CH_Documento_Autocompletado li:hover {
+    background-color: #f2f2f2;
+}
+
+#Contenido_CH_Documento_Autocompletado li:active {
+    background-color: #e2e2e2;
+}
+
+#Contenido_CH_Documento_Autocompletado li:first-child {
+    margin-top: -1px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+#Contenido_CH_Documento_Autocompletado li:last-child {
+    margin-bottom: -1px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+
+
+#Contenido_CH_Documento_Autocompletado {
+  max-width: 400px; /*opcional, establece el ancho máximo del autocompletado*/
+}
+
+    
+</style>
+
 <div class="content-wrapper">
     <div class="row">
         <div class="col-md-12 grid-margin stretch-card">
@@ -10,10 +62,11 @@
                     <form class="forms-sample" id="Contenido_CH_Formulario">
                         @csrf
                         <div class="form-group">
-                            <label for="exampleInputUsername1">Documento Personal</label>
+                            <label for="exampleInputUsername1">Documento - Nombres - Apellidos</label>
                             <div class="row">
                                 <div class="col-md-11">
-                                    <input type="text" class="form-control" id="Contenido_CH_Documento" name="Contenido_CH_Documento" required>
+                                    <input type="text" class="form-control autocomplete" id="Contenido_CH_Documento" name="Contenido_CH_Documento" placeholder="insertar documento o nombres" required>
+                                    <ul id="Contenido_CH_Documento_Autocompletado"></ul>
                                 </div>
                                 <div class="col-md-1">
                                     <input type="button" class="btn btn-success" value="🔎" id="Contenido_CH_Btn_Buscar_Documento">
