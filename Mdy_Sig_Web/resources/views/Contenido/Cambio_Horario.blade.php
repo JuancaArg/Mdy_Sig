@@ -3,54 +3,52 @@
 @section('contenido')
 
 <style>
+    #Contenido_CH_Documento_Autocompletado {
+        list-style-type: none;
+        padding: 0;
+        margin-top: -1px;
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        max-height: 200px;
+        overflow-y: auto;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        border-top-right-radius: 4px;
+        border-top-left-radius: 4px;
+    }
 
-#Contenido_CH_Documento_Autocompletado {
-    list-style-type: none;
-    padding: 0;
-    margin-top: -1px;
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    max-height: 200px;
-    overflow-y: auto;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    border-top-right-radius: 4px;
-    border-top-left-radius: 4px;
-}
+    #Contenido_CH_Documento_Autocompletado li {
+        padding: 10px;
+        cursor: pointer;
+    }
 
-#Contenido_CH_Documento_Autocompletado li {
-    padding: 10px;
-    cursor: pointer;
-}
+    #Contenido_CH_Documento_Autocompletado li:hover {
+        background-color: #f2f2f2;
+    }
 
-#Contenido_CH_Documento_Autocompletado li:hover {
-    background-color: #f2f2f2;
-}
+    #Contenido_CH_Documento_Autocompletado li:active {
+        background-color: #e2e2e2;
+    }
 
-#Contenido_CH_Documento_Autocompletado li:active {
-    background-color: #e2e2e2;
-}
+    #Contenido_CH_Documento_Autocompletado li:first-child {
+        margin-top: -1px;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+    }
 
-#Contenido_CH_Documento_Autocompletado li:first-child {
-    margin-top: -1px;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-}
-
-#Contenido_CH_Documento_Autocompletado li:last-child {
-    margin-bottom: -1px;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-}
-
+    #Contenido_CH_Documento_Autocompletado li:last-child {
+        margin-bottom: -1px;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+    }
 
 
-#Contenido_CH_Documento_Autocompletado {
-  max-width: 400px; /*opcional, establece el ancho máximo del autocompletado*/
-}
 
-    
+    #Contenido_CH_Documento_Autocompletado {
+        max-width: 400px;
+        /*opcional, establece el ancho máximo del autocompletado*/
+    }
 </style>
 
 <div class="content-wrapper">
@@ -164,14 +162,9 @@
                             <div class="col-md-6">
                                 <div class="form-group row">
                                     <label class="col-sm-4 col-form-label">Break Defecto</label>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-8">
                                         <select class="form-control" name="Contenido_CH_Hora_Break_Entrada" id="Contenido_CH_Hora_Break_Entrada">
                                             <option hidden selected>Break inicio</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <select class="form-control" name="Contenido_CH_Hora_Break_Salida" id="Contenido_CH_Hora_Break_Salida">
-                                            <option hidden selected>Break fin</option>
                                         </select>
                                     </div>
                                 </div>

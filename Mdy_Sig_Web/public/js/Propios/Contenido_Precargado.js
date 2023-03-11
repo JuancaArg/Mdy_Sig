@@ -5,6 +5,9 @@ for (let index = 0; index < dias.length; index++) {
     $('#Contenido_CH_' + dias[index] + '_Salida').append('<option>DS</option>');
     $('#Contenido_CH_' + dias[index] + '_Entrada').append('<option>DS</option>');
 
+    $('#Contenido_CH_Hora_Break_'+ dias[index] +'_Entrada').append('<option>Sin Break</option>');
+    $('#Contenido_CH_Hora_Break_'+ dias[index] +'_Salida').append('<option>Sin Break</option>');
+
 }
 
 // Carga los intervalos a los select

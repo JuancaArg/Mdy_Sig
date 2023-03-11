@@ -216,7 +216,7 @@ $('#Contenido_CH_Documento').on('keyup', function(){
       data: {Controlador: 'BusquedaDniNombres', valor: valor },
       success: function(response) {
         var res = JSON.parse(response);
-        console.log(res);
+        //console.log(res);
         // Vaciamos la lista de opciones existentes
         $('#Contenido_CH_Documento_Autocompletado').empty();
         // Recorremos cada resultado y generamos un elemento HTML para cada uno
