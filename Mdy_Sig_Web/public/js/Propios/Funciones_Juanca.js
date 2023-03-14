@@ -100,11 +100,21 @@ $('#Contenido_CH_Hora_Break_Entrada').on('change', function () {
             let horafinal = $(this).val().substr(0,3)+""+(parseInt($(this).val().substr(3,2)) + parseInt(horasbreak));
 
             console.log(horafinal);
-
+            console.log(horafinal.substr(3,2));
+        
             for (let index = 0; index < dias.length; index++) {
 
                 $('#Contenido_CH_Hora_Break_' + dias[index] + '_Entrada').val($(this).val());                
-                $('#Contenido_CH_Hora_Break_' + dias[index] + '_Salida').val(horafinal);
+                
+                if (horafinal.substr(3,2) == 60) {
+                    
+                    console.log('siguiente hora');
+
+                } else {
+                 
+                    $('#Contenido_CH_Hora_Break_' + dias[index] + '_Salida').val(horafinal);
+
+                }        
 
             }
 
