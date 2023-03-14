@@ -38,26 +38,22 @@
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <label for="exampleInputConfirmPassword1">Nombre Asesor</label>
-                                    <input type="text" class="form-control" id="Contenido_VA_Nombre" disabled>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="exampleInputConfirmPassword1">Apellido Paterno</label>
+                                    <label for="exampleInputConfirmPassword1">Apellidos</label>
                                     <input type="text" class="form-control" id="Contenido_VA_Paterno" disabled>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="exampleInputConfirmPassword1">Apellido Materno</label>
-                                    <input type="text" class="form-control" id="Contenido_VA_Materno" disabled>
+                                    <label for="exampleInputConfirmPassword1">Nombres Asesor</label>
+                                    <input type="text" class="form-control" id="Contenido_VA_Nombre" disabled>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="exampleInputConfirmPassword1">Sub Campaña</label>
+                                    <input type="text" class="form-control" id="Contenido_VA_SubCampaña" disabled>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="row">
-                                <div class="col-md-4">
-                                    <label for="exampleInputConfirmPassword1">Sub Campaña</label>
-                                    <input type="text" class="form-control" id="Contenido_VA_SubCampaña" disabled>
-                                </div>
-                                <div class="col-md-4">
+                                <div class="col-md-2">
                                     <label for="exampleInputConfirmPassword1">Sigla Asistencia</label>
                                     <input type="text" class="form-control" id="Contenido_VA_Sigla" disabled>
                                 </div>
@@ -65,36 +61,42 @@
                                     <label for="exampleInputConfirmPassword1">Descripción de Sigla</label>
                                     <input type="text" class="form-control" id="Contenido_VA_Descripcion" disabled>
                                 </div>
+                                <div class="col-md-3">
+                                    <label for="exampleInputConfirmPassword1">Hora de Ingreso</label>
+                                    <input type="text" class="form-control" id="Contenido_VA_Hora_Ingreso" disabled>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="exampleInputConfirmPassword1">Horario Programado</label>
+                                    <input type="text" class="form-control" id="Contenido_VA_Hora_Programado" disabled>
+                                </div>
                             </div>
                         </div>
 
-                        <h4 class="card-title">Datos a Modificar</h4>
+                        <h4 class="card-title">Detalle de Cambio</h4>
                         <div class="form-group">
 
                             <div class="form-group row">
-                                <label class="col-sm-1 col-form-label">Nueva Sigla</label>
-                                <div class="col-sm-3">
-                                    <select class="form-control" name="Contenido_VA_Lista_Sigla"
-                                        id="Contenido_VA_Lista_Sigla">
-                                        <option hidden selected>Seleccionar Sigla</option>
-                                    </select>
+                                <div class="col-md-2">
+                                    <label for="exampleInputConfirmPassword1">Tipo de Solicitud</label>
+                                        <select class="form-control" name="Contenido_VA_Lista_Sigla"
+                                            id="Contenido_VA_Lista_Sigla">
+                                            <option hidden selected>Seleccionar Sigla</option>
+                                        </select>
                                 </div>
-
-                                <div class="col-md-8">
-                                    <div class="form-group row">
-                                        <label class="col-sm-1 col-form-label">Motivo</label>
-                                        <div class="col-sm-11">
-                                            <select class="form-control" name="Contenido_VA_Lista_Motivo"
-                                                id="Contenido_VA_Lista_Motivo">
-                                                <option hidden selected>Seleccionar Motivo</option>
-                                            </select>
-                                        </div>
-                                    </div>
+                                <div class="col-md-4">
+                                    <label for="exampleInputConfirmPassword1">Motivo</label>
+                                        <select class="form-control" name="Contenido_VA_Lista_Motivo"
+                                            id="Contenido_VA_Lista_Motivo">
+                                            <option hidden selected>Seleccionar Motivo</option>
+                                        </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="exampleInputConfirmPassword1">Hora de Ingreso</label>
+                                    <input type="time" class="form-control" id="Contenido_VA_Hora_Ingreso_mod" >
                                 </div>
                             </div>
-
-
                         </div>
+
                         <input type="button" value="Registrar" id="btn-sol-val-asistencia" class="btn btn-success">
                         <button href="#" class="btn btn-light">Borrar Formulario</button>
                     </form>

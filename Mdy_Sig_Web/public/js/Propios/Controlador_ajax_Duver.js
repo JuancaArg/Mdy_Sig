@@ -12,10 +12,11 @@ $('#Contenido_VA_Btn_Buscar_Documento').click(function () {
 
     $(Contenido_VA_Nombre).val('');
     $(Contenido_VA_Paterno).val('');
-    $(Contenido_VA_Materno).val('');
     $(Contenido_VA_SubCampaña).val('');
     $(Contenido_VA_Sigla).val('');
     $(Contenido_VA_Descripcion).val('');
+    $(Contenido_VA_Hora_Ingreso).val('');
+    $(Contenido_VA_Hora_Programado).val('');
 
     $.ajax({
         url: ruta + 'Controlador_Funciones_Ajax',
@@ -48,11 +49,12 @@ $('#Contenido_VA_Btn_Buscar_Documento').click(function () {
                 } else {
 
                     $(Contenido_VA_Nombre).val(resultado[0]["NOMBRES"]);
-                    $(Contenido_VA_Paterno).val(resultado[0]["AP_PATERNO"]);
-                    $(Contenido_VA_Materno).val(resultado[0]["AP_MATERNO"]);
+                    $(Contenido_VA_Paterno).val(resultado[0]["AP_PATERNO"] + ' ' + resultado[0]["AP_MATERNO"]);
                     $(Contenido_VA_SubCampaña).val(resultado[0]["SUB_CAMPANIA"]);
                     $(Contenido_VA_Sigla).val(resultado[0]["SIGLA_ASISTENCIA"]);
                     $(Contenido_VA_Descripcion).val(resultado[0]["DESCRIPCION_SIGLA"]);
+                    $(Contenido_VA_Hora_Ingreso).val(resultado[0]["INGRESO_REAL"]);
+                    $(Contenido_VA_Hora_Programado).val(resultado[0]["HORARIO_PROGRAMADO"]);
 
                 }
             }
@@ -63,8 +65,9 @@ $('#Contenido_VA_Btn_Buscar_Documento').click(function () {
 });
 
 
-var siglas = ['A', 'FI']
-var motivo_A = ['Seleccionar Motivo','FALLO EN EL PROCESO DE ALTA DE PERSONAL', 'FALLO DE OMISION DE PERSONAL', 'FALLO DE REGISTRO EN SISTEMA', 'RETRASO DEL PROCESO DE CRECIMIENTO', 'FALTA DE ACTUALIZACIÓN DEL CARGO FUNCIONAL', 'FALLO EN PC, MARCACIÓN TARDÍA (ACTUALIZACIÓN DE TARDANZA)']
+var siglas = ['Validación de Asistencia', 'Validación de Tardanza','Anulación de Conexión']
+var motivo_A = ['Seleccionar Motivo','FALLO EN EL PROCESO DE ALTA DE PERSONAL', 'FALLO DE OMISION DE PERSONAL', 'FALLO DE REGISTRO EN SISTEMA', 'RETRASO DEL PROCESO DE CRECIMIENTO', 'FALTA DE ACTUALIZACIÓN DEL CARGO FUNCIONAL']
+var motivo_Tardanza = ['Seleccionar Motivo','FALLO EN PC, MARCACIÓN TARDÍA (ACTUALIZACIÓN DE TARDANZA)']
 var motivo_FI = ['Seleccionar Motivo','ERROR DE MARCACIÓN']
 
 for (let index = 0; index < siglas.length; index++) {
@@ -76,22 +79,34 @@ for (let index = 0; index < siglas.length; index++) {
 
 $('#Contenido_VA_Lista_Sigla').on('change', function () {
 
-    var opciones_motivo = null
+    //var opciones_motivo = null
     $('#Contenido_VA_Lista_Motivo').empty();
 
-    if ($(this).val() == 'A') {
+    if ($(this).val() == 'Validación de Asistencia') {
         
         for (let index = 0; index < motivo_A.length; index++) {
             opciones_motivo = '<option>' + motivo_A[index] + '</option>';
             $('#Contenido_VA_Lista_Motivo').append(opciones_motivo);
         };
+        $('#Contenido_VA_Hora_Ingreso_mod').attr('disabled', 'disabled');
 
-    }else{
+    } else if ($(this).val() == 'Validación de Tardanza') {
+
+        for (let index = 0; index < motivo_Tardanza.length; index++) {
+            opciones_motivo = '<option>' + motivo_Tardanza[index] + '</option>';
+            $('#Contenido_VA_Lista_Motivo').append(opciones_motivo);
+        };
+
+        $('#Contenido_VA_Hora_Ingreso_mod').removeAttr('disabled');
+
+    } else if ($(this).val() == 'Anulación de Conexión') {
 
         for (let index = 0; index < motivo_FI.length; index++) {
             opciones_motivo = '<option>' + motivo_FI[index] + '</option>';
             $('#Contenido_VA_Lista_Motivo').append(opciones_motivo);
         };
+
+        $('#Contenido_VA_Hora_Ingreso_mod').attr('disabled', 'disabled');
     }
 
 })
