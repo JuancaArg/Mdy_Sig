@@ -201,3 +201,59 @@ $('#btn-sol-cambio-horario').click(function (e) {
   
 });
 
+// Autcompletado por documento o por dni
+
+$('#Contenido_CH_Documento').on('keyup', function(){
+
+  var valor = $(this).val();
+
+  if(valor != ''){
+
+    $.ajax({
+      url: ruta + 'Controlador_Funciones_Ajax',
+      type: 'get',
+      async: true,
+      data: {Controlador: 'BusquedaDniNombres', valor: valor },
+      success: function(response) {
+        var res = JSON.parse(response);
+        //console.log(res);
+        // Vaciamos la lista de opciones existentes
+        $('#Contenido_CH_Documento_Autocompletado').empty();
+        // Recorremos cada resultado y generamos un elemento HTML para cada uno
+        $.each(res, function(index, value) {
+            $('<li></li>')
+                .attr('data-value', value.buscador)
+                .text(value.buscador)
+                .appendTo('#Contenido_CH_Documento_Autocompletado');
+        });
+    
+        // Mostramos la lista de opciones
+        $('#Contenido_CH_Documento_Autocompletado').fadeIn();
+    }
+    
+    })
+
+  }else{
+
+    $('#Contenido_CH_Documento_Autocompletado').fadeOut();
+
+  }
+
+})
+
+$('#Contenido_CH_Documento_Autocompletado').on('click', 'li', function() {
+
+  var valorLi = $(this).text(); // Obtener el valor completo del elemento li
+  var valorSinGuion = valorLi.split('-')[0]; // Obtener la parte antes del guion
+  $('#Contenido_CH_Documento').val(valorSinGuion) // Mostrar en consola el valor obtenido
+
+});
+
+// Oculte autocompletar cuando se haga click afuera
+
+$(document).click(function(event) {
+  if(!$(event.target).closest('#Contenido_CH_Documento').length) {
+    // El clic fue fuera del autocompletar, ocultarlo
+    $('#Contenido_CH_Documento_Autocompletado').fadeOut();
+  }
+});

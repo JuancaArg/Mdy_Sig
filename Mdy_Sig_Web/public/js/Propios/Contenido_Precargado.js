@@ -5,9 +5,22 @@ for (let index = 0; index < dias.length; index++) {
     $('#Contenido_CH_' + dias[index] + '_Salida').append('<option>DS</option>');
     $('#Contenido_CH_' + dias[index] + '_Entrada').append('<option>DS</option>');
 
+    $('#Contenido_CH_Hora_Break_'+ dias[index] +'_Entrada').append('<option>Sin Break</option>');
+    $('#Contenido_CH_Hora_Break_'+ dias[index] +'_Salida').append('<option>Sin Break</option>');
+
 }
 
 // Carga los intervalos a los select
+
+$('#Contenido_CH_Hora_Defecto_Entrada').append('<option>DS</option>');
+$('#Contenido_CH_Hora_Defecto_Salida').append('<option>DS</option>');
+
+
+$('#Contenido_CH_Hora_Break_Entrada').append('<option>Sin Break</option>');
+$('#Contenido_CH_Hora_Break_Salida').append('<option>Sin Break</option>');
+
+
+// Carga contenido de intervalo de 30 minutos para horario regular
 
 for (let index = 0; index < intervalos.length; index++) {
 
@@ -17,9 +30,31 @@ for (let index = 0; index < intervalos.length; index++) {
 
         $('#Contenido_CH_' + dias[index] + '_Salida').append(opciones);
         $('#Contenido_CH_' + dias[index] + '_Entrada').append(opciones);
-
     }
+
+    $('#Contenido_CH_Hora_Defecto_Entrada').append(opciones);
+    $('#Contenido_CH_Hora_Defecto_Salida').append(opciones);
+
 }
+
+// Carga contenido de intervalo de 15 minutos para horario regular
+
+for (let index = 0; index < intervalos15min.length; index++) {
+    
+    opciones = '<option>' + intervalos15min[index] + '</option>';
+
+    for (let index = 0; index < dias.length; index++) {
+
+        $('#Contenido_CH_Hora_Break_'+ dias[index] +'_Entrada').append(opciones);
+        $('#Contenido_CH_Hora_Break_'+ dias[index] +'_Salida').append(opciones);
+
+    }    
+
+    $('#Contenido_CH_Hora_Break_Entrada').append(opciones);
+    $('#Contenido_CH_Hora_Break_Salida').append(opciones);
+    
+}
+
 
 // convierte datos de una tabla en objeto
 
