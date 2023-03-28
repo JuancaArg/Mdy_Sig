@@ -51,6 +51,12 @@ class Controlador_Funciones_Ajax extends Controller
 
                 $ejecuta = Controlador_Personal::Controlador_Registra_Validacion_Asistencia($resultados);
             }
+            elseif ($Controlador == 'Resumen_Asistencia_Buscar'){
+                $fechaini = $request->query('v_fec_ini');
+                $fechafin = $request->query('v_fec_fin');
+                $ejecuta = Controlador_Personal::Controlador_Resumen_Asistencia_Buscar($fechaini, $fechafin);
+
+            }            
             elseif ($Controlador == 'BusquedaDniNombres'){
 
                 $valor = $request->query('valor');

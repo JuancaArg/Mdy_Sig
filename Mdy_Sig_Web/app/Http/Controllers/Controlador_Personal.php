@@ -70,4 +70,16 @@ class Controlador_Personal extends Controller
 
     }
     
+    public static function Controlador_Resumen_Asistencia_Buscar($fechaini, $fechafin)
+    {
+        $Doc = session('Documento');
+
+        $ejecuta = Res_Asistencia::where('DOCUMENTO',$Doc)
+            ->whereBetween('fecha', [$fechaini, $fechafin])
+            ->OrderBy('fecha', 'ASC')
+            ->get();
+
+        echo $ejecuta;
+    }   
+
 }

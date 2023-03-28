@@ -15,17 +15,17 @@
             <div class="col-md-5">
               <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Inicio :</label>
-                <input class="col-md-10 form-control" type="date">
+                <input class="col-md-10 form-control" type="date" id = "fecini_Res_Asistencia" name="fecini_Res_Asistencia" >
               </div>
             </div>
             <div class="col-md-5">
               <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Fin:</label>
-                <input class="col-md-10 form-control" type="date">
+                <input class="col-md-10 form-control" type="date" id = "fecfin_Res_Asistencia" name="fecfin_Res_Asistencia">
               </div>
             </div>
             <div class="col-md-2">
-              <input type="button" class="form-control btn btn-success " value="🔎" id="">
+              <input type="button" class="form-control btn btn-success " value="🔎" id="Btn_Buscar_Res_Asistencia">
             </div>
           </div>
           <div class="table-responsive">
