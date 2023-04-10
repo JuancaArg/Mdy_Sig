@@ -122,13 +122,15 @@ $('#btn-sol-cambio-horario').click(function (e) {
 
   for (let index = 0; index < dias.length; index++) {
 
-    // Valida si no DS
 
+    // Calcula horas sobre el horario programado
 
     if (databla['Contenido_CH_' + dias[index] + '_Entrada'] != "DS"
       && databla['Contenido_CH_' + dias[index] + '_Entrada'] != "Hora Ingreso"
       && databla['Contenido_CH_' + dias[index] + '_Salida'] != "Hora Salida"
     ) {
+
+      // Calculo sobre la programacion de horario
 
       let HoraSal = databla['Contenido_CH_' + dias[index] + '_Salida'].substring(0, 2)
       let HoraIng = databla['Contenido_CH_' + dias[index] + '_Entrada'].substring(0, 2)
@@ -140,12 +142,31 @@ $('#btn-sol-cambio-horario').click(function (e) {
 
       // Si el horario es de madrugada
 
-      if (Horas + Inter < 0) {
-        var TiempoProg = (24 - HoraIng) + Number(HoraSal) + Inter;
-      } else {
-        var TiempoProg = Horas + Inter;
-      }
+        if (Horas + Inter < 0) {
+          var TiempoProg = (24 - HoraIng) + Number(HoraSal) + Inter;
+        } else {
+          var TiempoProg = Horas + Inter;
+        }
 
+      // Calculo sobre los break
+
+      let HoraSalBk = databla['Contenido_CH_' + dias[index] + '_Salida'].substring(0, 2)
+      let HoraIngBk = databla['Contenido_CH_' + dias[index] + '_Entrada'].substring(0, 2)
+      let InterSalBk = databla['Contenido_CH_' + dias[index] + '_Salida'].substring(3, 5)
+      let InterIngBk = databla['Contenido_CH_' + dias[index] + '_Entrada'].substring(3, 5)
+
+      let HorasBk = HoraSalBk - HoraIngBk;
+      let InterBk = (InterSalBk - InterIngBk) / 60;
+
+      // Si el horario es de madrugada
+
+        if (HorasBk + InterBk < 0) {
+          var TiempoProgBk = (24 - HoraIngBk) + Number(HoraSalBk) + InterBk;
+        } else {
+          var TiempoProgBk = HorasBk + InterBk;
+        }
+
+      TotalhoraBk = TotalhoraBk + TiempoProgBk; 
       Totalhora = Totalhora + TiempoProg;
 
     } else {
@@ -161,6 +182,9 @@ $('#btn-sol-cambio-horario').click(function (e) {
 
     }
   }
+
+  console.log(TotalhoraCk);
+  
 
   console.log(databla);
 

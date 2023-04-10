@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="{{ asset('src/css/vertical-layout-light/style.css') }}">
   <!-- endinject -->
   <link rel="shortcut icon" href="{{ asset('src/images/Logo-web.jpg') }}" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 
 
 </head>

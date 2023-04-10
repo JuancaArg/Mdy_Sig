@@ -73,8 +73,6 @@ $('#Contenido_CH_Hora_Break_Entrada').on('change', function () {
 
         let cambiomalla_condicion = $('#Contenido_CH_Condicion').val();
 
-        console.log(cambiomalla_condicion)
-
         if (cambiomalla_condicion == '') {
 
             swal.fire('Mensaje del sistema', 'No a seleccion ningun personal', 'warning')
@@ -89,36 +87,52 @@ $('#Contenido_CH_Hora_Break_Entrada').on('change', function () {
                 
                 horasbreak = 15
 
+
+                let horaMoment = moment($(this).val(),"HH:mm")
+
+                horaMoment.add(horasbreak,"minutes");
+    
+                let horafinal = horaMoment.format("HH:mm");          
+                
+
+                for (let index = 0; index < dias.length; index++) {
+                
+                    $('#Contenido_CH_Hora_Break_'+dias[index]+'_Entrada').val("Sin Break");
+                    $('#Contenido_CH_Hora_Break_'+dias[index]+'_Salida').val("Sin Break");
+                                    
+                }
+    
+                // Dia de break por defecto
+    
+                $('#Contenido_CH_Hora_Break_Lunes_Entrada').val($(this).val());
+                $('#Contenido_CH_Hora_Break_Lunes_Salida').val(horafinal);                
+
+
             }else{
 
                 horasbreak = 60
 
-            }
 
-            // Replica en valor de break por defecto
+                let horaMoment = moment($(this).val(),"HH:mm")
 
-            let horafinal = $(this).val().substr(0,3)+""+(parseInt($(this).val().substr(3,2)) + parseInt(horasbreak));
-
-            console.log(horafinal);
-            console.log(horafinal.substr(3,2));
-        
-            for (let index = 0; index < dias.length; index++) {
-
-                $('#Contenido_CH_Hora_Break_' + dias[index] + '_Entrada').val($(this).val());                
+                horaMoment.add(horasbreak,"minutes");
+    
+                let horafinal = horaMoment.format("HH:mm");       
                 
-                if (horafinal.substr(3,2) == 60) {
-                    
-                    console.log('siguiente hora');
 
-                } else {
-                 
-                    $('#Contenido_CH_Hora_Break_' + dias[index] + '_Salida').val(horafinal);
-
-                }        
+                for (let index = 0; index < dias.length; index++) {
+                
+                    $('#Contenido_CH_Hora_Break_'+dias[index]+'_Entrada').val($(this).val());
+                    $('#Contenido_CH_Hora_Break_'+dias[index]+'_Salida').val(horafinal);
+                                    
+                }
+    
+                // Dia de break por defecto
+    
+                $('#Contenido_CH_Hora_Break_Domingo_Entrada').val("Sin Break");
+                $('#Contenido_CH_Hora_Break_Domingo_Salida').val("Sin Break");                
 
             }
-
-
 
         }   
 })
