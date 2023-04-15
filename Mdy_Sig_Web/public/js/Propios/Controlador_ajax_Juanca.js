@@ -281,3 +281,39 @@ $(document).click(function(event) {
     $('#Contenido_CH_Documento_Autocompletado').fadeOut();
   }
 });
+
+// Boton de descargar
+
+$('#Exportado_Boton').on('click',function(){
+
+  let variablecomboexp = $('#Exportado_ComboBox').val();
+
+  if (variablecomboexp == 'Selecciona una opción') {
+  
+    swal.fire('Mensaje del Sistema','Seleccione una opcion','warning')
+
+  }
+  else{
+
+    $.ajax({
+      url: ruta + 'Controlador_Funciones_Ajax',
+      type: 'get',
+      async: true,
+      data: {Controlador: 'ExportadosData', variablecomboexp: variablecomboexp },
+      success: function(res) {
+
+        var wb = XLSX.utils.book_new();
+        // Convertir los datos JSON a una hoja de cálculo
+        var ws = XLSX.utils.json_to_sheet(res);
+        // Agregar la hoja de cálculo al objeto Workbook
+        XLSX.utils.book_append_sheet(wb, ws, "Datos");
+        // Descargar el archivo de Excel
+        XLSX.writeFile(wb, "datos.xlsx");
+
+    }
+    
+    })    
+
+  }
+
+})

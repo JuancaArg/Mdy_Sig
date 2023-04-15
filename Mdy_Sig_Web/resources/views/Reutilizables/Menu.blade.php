@@ -212,5 +212,11 @@
                 </ul>
             </div>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="Exportados">
+                <i class="typcn typcn-download menu-icon"></i>
+                <span class="menu-title">Exportados</span>
+            </a>
+        </li>        
     </ul>
 </nav>

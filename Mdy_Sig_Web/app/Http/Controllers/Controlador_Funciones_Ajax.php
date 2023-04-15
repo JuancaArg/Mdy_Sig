@@ -62,7 +62,13 @@ class Controlador_Funciones_Ajax extends Controller
                 $valor = $request->query('valor');
                 
                 $ejecuta = Controlador_Personal::Controlador_BusquedaDniNombres($valor);
-            }            
+            } 
+            elseif ($Controlador == 'ExportadosData'){
+
+                $variablecomboexp = $request->query('variablecomboexp');
+
+                $ejecuta = ExportController::ExportData($variablecomboexp);
+            }              
         }
     }
 }
