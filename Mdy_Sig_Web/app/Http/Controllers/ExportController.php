@@ -21,12 +21,12 @@ class ExportController extends Controller
 
             $ejecuta = Modelo_Usuarios::selectRaw('*')
             ->take(100)
-                    ->get();
+                    ->get()->toJson();
 
 
         }
 
-        return response()->json($ejecuta); 
+        print_r($ejecuta); 
 
     }
 

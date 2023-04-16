@@ -300,15 +300,17 @@ $('#Exportado_Boton').on('click',function(){
       type: 'get',
       async: true,
       data: {Controlador: 'ExportadosData', variablecomboexp: variablecomboexp },
-      success: function(res) {
+      success: function(resp) {
 
+        var res = JSON.parse(resp);
+        
         var wb = XLSX.utils.book_new();
         // Convertir los datos JSON a una hoja de cálculo
         var ws = XLSX.utils.json_to_sheet(res);
         // Agregar la hoja de cálculo al objeto Workbook
         XLSX.utils.book_append_sheet(wb, ws, "Datos");
         // Descargar el archivo de Excel
-        XLSX.writeFile(wb, "datos.xlsx");
+        XLSX.writeFile(wb, "Exportado.xlsx");
 
     }
     
